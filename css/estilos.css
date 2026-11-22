@@ -1,0 +1,670 @@
+/* NACISTE PARA CRECER | Hoja de estilos principal */
+
+/* 1. VARIABLES Y AJUSTES GENERALES */
+:root {
+    --bg: #101010;
+    --panel: #191919;
+    --panel-2: #202020;
+    --line: #34312b;
+    --gold: #c9a96e;
+    --gold-light: #e3c991;
+    --text: #f4f1eb;
+    --muted: #aaa49a;
+    --danger: #ff9c91;
+    --radius: 18px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    color: var(--text);
+    background: radial-gradient(ellipse at 18% 8%, #292318 0, transparent 32%), var(--bg);
+    font-family: "DM Sans", sans-serif;
+}
+
+a { color: inherit; }
+
+h1, h2, p { margin-top: 0; }
+
+/* 2. ENCABEZADO */
+.site-header,
+.site-footer {
+    width: min(1120px, calc(100% - 40px));
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.site-header {
+    min-height: 86px;
+    border-bottom: 1px solid #292722;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.brand-mark {
+    width: 43px;
+    height: 43px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: background .25s ease, color .25s ease;
+}
+
+.brand strong {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+}
+
+.brand small {
+    display: block;
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 9px;
+    letter-spacing: 1.7px;
+}
+
+.brand:hover .brand-mark {
+    background: var(--gold);
+    color: #101010;
+}
+
+.header-contact {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.header-contact b {
+    margin-left: 5px;
+    color: var(--gold-light);
+    font-size: 11px;
+    transition: color .3s ease;
+}
+
+.header-contact:hover b { color: #fff; }
+
+/* 3. CONTENIDO PRINCIPAL */
+.page-shell {
+    width: min(1120px, calc(100% - 40px));
+    margin: 90px auto 55px;
+    display: grid;
+    grid-template-columns: .85fr 1.15fr;
+    gap: 55px;
+    align-items: start;
+}
+
+.intro {
+    position: sticky;
+    top: 35px;
+    height: fit-content;
+    padding-top: 34px;
+}
+
+.eyebrow {
+    margin: 0 0 16px;
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+}
+
+.intro h1 {
+    margin: 20px 0 22px;
+    color: #eee8dc;
+    font: 500 clamp(38px, 4.2vw, 56px)/1.15 "Playfair Display", Georgia, serif;
+    letter-spacing: -1.5px;
+}
+
+.intro h1 em {
+    color: var(--gold-light);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.intro-copy {
+    max-width: 390px;
+    color: #b9b4ab;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.intro-note {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 38px;
+    color: #aaa397;
+    font-size: 12px;
+    letter-spacing: .2px;
+}
+
+.note-dot {
+    width: 7px;
+    height: 7px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 12px #c9a96e77;
+}
+
+/* 4. TARJETA DEL FORMULARIO */
+.form-card {
+    position: relative;
+    padding: 36px;
+    border: 1px solid rgba(201, 169, 110, .20);
+    border-radius: 20px;
+    background: linear-gradient(145deg, #1e1d1a, #151515);
+    box-shadow: 0 25px 80px rgba(0, 0, 0, .45), inset 0 1px 0 rgba(255, 255, 255, .025);
+    transition: border-color .3s ease, box-shadow .3s ease;
+}
+
+.form-card:hover {
+    border-color: rgba(201, 169, 110, .38);
+    box-shadow: 0 25px 85px rgba(0, 0, 0, .42), 0 0 25px rgba(201, 169, 110, .04);
+}
+
+.form-topline {
+    display: flex;
+    justify-content: space-between;
+    color: var(--gold-light);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.progress-track {
+    height: 4px;
+    margin: 16px 0 36px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #35312a;
+}
+
+.progress-fill {
+    width: 10%;
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(90deg, #a8864c, var(--gold-light));
+    box-shadow: 0 0 12px rgba(201, 169, 110, .25);
+    transition: width .4s ease;
+}
+
+.step-heading { margin-bottom: 28px; }
+.step-heading .eyebrow { margin-bottom: 9px; }
+
+h2 {
+    margin-bottom: 9px;
+    font: 600 30px/1.2 "Playfair Display", Georgia, serif;
+}
+
+.step-heading > p:last-child {
+    margin-bottom: 0;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* 5. CAMPOS */
+.fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px 18px;
+}
+
+.field { min-width: 0; }
+.field.full { grid-column: 1 / -1; }
+
+label,
+.field-label {
+    display: block;
+    margin-bottom: 11px;
+    color: #e7e1d6;
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: .4px;
+    line-height: 1.5;
+}
+
+.optional {
+    margin-left: 2px;
+    color: #b09a75;
+    font-size: 10.5px;
+    font-weight: 400;
+    letter-spacing: .2px;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #39362f;
+    border-radius: 9px;
+    outline: none;
+    background: #111;
+    color: var(--text);
+    font: 13px "DM Sans", sans-serif;
+    transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--gold);
+    background: #151411;
+    box-shadow: 0 0 0 3px rgba(201, 169, 110, .12);
+}
+
+input::placeholder,
+textarea::placeholder { color: #706b63; }
+
+textarea {
+    min-height: 115px;
+    resize: vertical;
+    line-height: 1.7;
+}
+
+select {
+    appearance: auto;
+    cursor: pointer;
+}
+
+.field-hint {
+    margin: 8px 0 0;
+    color: #a49b8c;
+    font-size: 11px;
+    letter-spacing: .1px;
+    line-height: 1.65;
+}
+
+.error-message {
+    min-height: 18px;
+    margin: 16px 0 0;
+    color: var(--danger);
+    font-size: 12px;
+}
+
+/* Casilla de consentimiento */
+.consent-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: #c8c1b6;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.consent-row input {
+    width: 16px;
+    min-width: 16px;
+    margin: 1px 0 0;
+    accent-color: var(--gold);
+}
+
+/* 6. BOTONES Y ACCIONES */
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.button {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 13px;
+    overflow: hidden;
+    padding: 14px 20px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    font: 700 12px "DM Sans", sans-serif;
+    letter-spacing: .4px;
+    transition: transform .25s ease, background .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.button[hidden] { display: none; }
+
+.button:hover:not(:disabled) { transform: translateY(-3px); }
+
+.button:active:not(:disabled) {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .2);
+}
+
+.button:disabled {
+    opacity: .35;
+    cursor: not-allowed;
+}
+
+.button-primary {
+    margin-left: auto;
+    background: linear-gradient(110deg, #b89457, #e3c991);
+    color: #17130d;
+    box-shadow: 0 5px 18px rgba(201, 169, 110, .12);
+}
+
+.button-primary:hover:not(:disabled) {
+    background: linear-gradient(110deg, #d0ae70, #f0d9a8);
+    box-shadow: 0 8px 25px rgba(201, 169, 110, .22), 0 0 12px rgba(201, 169, 110, .12);
+}
+
+.button-quiet {
+    border-color: #39362f;
+    background: #252421;
+    color: #d0c9bd;
+}
+
+.button-quiet:hover:not(:disabled) {
+    border-color: #a58a5d;
+    background: #302e29;
+    box-shadow: 0 4px 14px rgba(201, 169, 110, .10);
+}
+
+.button span { transition: transform .25s ease; }
+.button-primary:hover span { transform: translateY(3px); }
+
+.form-footnote {
+    margin: 22px 0 0;
+    color: #817c73;
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+/* 7. MENSAJE FINAL */
+.bottom-quote {
+    grid-column: 1 / -1;
+    padding: 24px 0 14px;
+    color: var(--gold-light);
+    text-align: center;
+}
+
+.bottom-quote > span {
+    display: block;
+    height: 42px;
+    opacity: .7;
+    font: 54px Georgia, serif;
+}
+
+.bottom-quote p {
+    margin-bottom: 13px;
+    font: 20px/1.5 "Playfair Display", Georgia, serif;
+}
+
+.bottom-quote small {
+    color: #837c6e;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+/* 8. PIE DE PÁGINA */
+.site-footer {
+    min-height: 70px;
+    border-top: 1px solid #292722;
+    color: #858077;
+    font-size: 10px;
+}
+
+.site-footer span {
+    letter-spacing: .3px;
+    line-height: 1.6;
+}
+
+.site-footer a {
+    color: var(--gold-light);
+    text-decoration: none;
+    transition: color .25s ease, opacity .25s ease;
+}
+
+.site-footer a:hover {
+    color: #f0d9a8;
+    opacity: .85;
+}
+
+/* 9. CONFIRMACIÓN DE ENVÍO */
+.success-panel {
+    padding: 28px 12px 18px;
+    text-align: center;
+}
+
+.success-mark {
+    display: grid;
+    place-items: center;
+    width: 54px;
+    height: 54px;
+    margin: 0 auto 24px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    color: var(--gold-light);
+    font-size: 24px;
+}
+
+.success-panel > p:not(.eyebrow) {
+    max-width: 380px;
+    margin: 0 auto 24px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.whatsapp-success { margin: auto; }
+
+/* 10. PANTALLA DE INTRODUCCIÓN */
+.splash-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: #101010;
+    text-align: center;
+    opacity: 0;
+    animation: aparecer 2s ease forwards;
+}
+
+.splash-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.splash-content h1 {
+    margin-bottom: 25px;
+    color: #d6b56d;
+    font-family: Georgia, serif;
+    font-size: clamp(30px, 5vw, 55px);
+    font-weight: normal;
+    letter-spacing: 7px;
+    text-shadow: 0 0 25px rgba(214, 182, 109, .20);
+}
+
+.splash-content p {
+    margin: 0;
+    color: #b9a77f;
+    font-size: 11px;
+    letter-spacing: 5px;
+}
+
+.splash-content::before,
+.splash-content::after {
+    display: block;
+    width: 65px;
+    height: 1px;
+    margin-right: auto;
+    margin-left: auto;
+    background: #c9a96e;
+    content: "";
+}
+
+.splash-content::before { margin-bottom: 35px; }
+.splash-content::after { margin-top: 35px; }
+
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+        transform: translateY(25px) scale(.97);
+        filter: blur(8px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+/* Ocultar la página mientras aparece la introducción */
+body.intro-activa { overflow: hidden; }
+
+body.intro-activa .site-header,
+body.intro-activa .page-shell,
+body.intro-activa .site-footer { visibility: hidden; }
+
+/* Animación de entrada de los campos */
+.fields.fields-enter { animation: fieldsEnter .45s ease both; }
+
+@keyframes fieldsEnter {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 11. TABLET */
+@media (max-width: 800px) {
+    .page-shell {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .intro {
+        position: static;
+        padding-top: 0;
+    }
+
+    .intro h1 { max-width: 650px; }
+    .intro-note { margin-top: 20px; }
+    .bottom-quote { grid-column: 1; }
+}
+
+/* 12. MÓVILES */
+@media (max-width: 600px) {
+    .site-header,
+    .site-footer,
+    .page-shell {
+        width: calc(100% - 28px);
+    }
+
+    .site-header { min-height: 72px; }
+    .brand { gap: 8px; }
+
+    .brand-mark {
+        width: 36px;
+        height: 36px;
+        font-size: 11px;
+    }
+
+    .brand strong {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .brand small {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .header-contact {
+        gap: 5px;
+        font-size: 9px;
+    }
+
+    .page-shell { margin-top: 34px; }
+
+    .intro h1 {
+        font-size: 36px;
+        letter-spacing: -1px;
+    }
+
+    .intro-note { margin-top: 20px; }
+
+    .form-card {
+        padding: 24px 18px;
+        border-radius: 16px;
+    }
+
+    .fields {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .field.full { grid-column: auto; }
+    h2 { font-size: 27px; }
+
+    .button {
+        padding: 13px 16px;
+        font-size: 11px;
+    }
+
+    .form-actions .button { padding: 13px 14px; }
+
+    .site-footer {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        padding: 20px 0;
+    }
+
+    .splash-content h1 {
+        font-size: clamp(25px, 7vw, 38px);
+        letter-spacing: 4px;
+    }
+
+    .splash-content p {
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+}
+
+/* 13. ACCESIBILIDAD */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
